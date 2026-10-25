@@ -2,7 +2,6 @@
 "use client";
 
 import {
-  useEffect,
   useMemo,
   useRef,
   useState,
@@ -66,17 +65,14 @@ export default function DataGrid<T extends object>({
   }, [filteredData, sortKey, sortDirection]);
 
   const totalPages = Math.max(1, Math.ceil(sortedData.length / pageSize));
+  const currentPage = Math.min(page, totalPages);
 
   const pageData = sortedData.slice(
-    (page - 1) * pageSize,
-    page * pageSize
-  );
+  (currentPage - 1) * pageSize,
+  currentPage * pageSize
+);
 
-  useEffect(() => {
-    if (page > totalPages) {
-      setPage(totalPages);
-    }
-  }, [page, totalPages]);
+  
 
   function handleSort(column: ColumnDef<T>) {
     if (!column.sortable) return;
