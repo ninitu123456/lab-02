@@ -250,8 +250,9 @@ export default function DataGrid<T extends object>({
 
                 return (
                   <tr
-                    key={(page - 1) * pageSize + rowIndex}
+                    key={(currentPage - 1) * pageSize + rowIndex}
                     role="row"
+                    aria-rowindex={(currentPage - 1) * pageSize + rowIndex + 2}
                     aria-selected={selected}
                     className={selected ? "bg-blue-100" : "hover:bg-slate-50"}
                   >
