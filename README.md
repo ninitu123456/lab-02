@@ -62,6 +62,7 @@ npm run build
 
 - [Task Decomposition](docs/TASK-DECOMPOSITION.md)
 - [Test Report](docs/TEST-REPORT.md)
+- [AI Failure Audit](AI_Failure_Audit.md)
 
 ## Accessibility
 
